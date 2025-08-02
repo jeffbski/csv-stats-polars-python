@@ -47,7 +47,7 @@ def process_csv(file_path: Path, column_name: str) -> SelectedStats:
     try:
         # Execute the query. This materializes the result into a DataFrame.
         # The resulting DataFrame will have a single row with our calculated stats.
-        stats_df = lf.select(aggregations).collect()
+        stats_df = lf.select(aggregations).collect(engine="streaming")
     except pl.exceptions.ColumnNotFoundError:
         raise ValueError(f"Error: Column '{column_name}' not found in the file.")
     except Exception as e:
