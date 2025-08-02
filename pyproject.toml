@@ -1,0 +1,7 @@
+[project]
+name = "csv-stats-polars-python"
+version = "0.1.0"
+description = "Calculate stats for csv file using python polars"
+readme = "README.md"
+requires-python = ">=3.13.5"
+dependencies = ["polars>=1.31.0"]
